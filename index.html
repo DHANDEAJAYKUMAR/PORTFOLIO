@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+</head>
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+  <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+    <img src="./images/header-bg-color.png" alt="" class="w-full">
+  </div>
+
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+   <img src="./images/logo.png" alt="Logo" class="w-44 -mt-3 cursor-pointer mr-14 dark:hidden">
+    <img src="./images/logo_dark.png" alt="Logo" class="w-44 -mt-3 cursor-pointer mr-14 hidden dark:block">
+
+    <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#Projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button onclick="toggleTheme()">
+        <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
+        <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
+      </button>
+
+      <a href="#contact" class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50">
+        Contact <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden">
+        <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block">
+      </a>
+
+      <button class="block md:hidden ml-3" onclick="openMenu()">
+        <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+        <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed top-0 bottom-0 right-0 w-64 z-50 h-screen bg-rose-50 dark:bg-[#1a001f] translate-x-full transition-transform duration-500 font-Ovo dark:bg-darkHover dark:text-white">
+  <div class="absolute right-6 top-6" onclick="closeMenu()">
+    <img src="/images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
+    <img src="/images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
+  </div>
+  <li><a href="#top" onclick="closeMenu()">Home</a></li>
+  <li><a href="#about" onclick="closeMenu()">About</a></li>
+  <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+  <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+  <li><a href="#Projects" onclick="closeMenu()">Projects</a></li>
+  <li><a href="#certificates" onclick="closeMenu()">certificates</a></li>
+  <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  
+</ul>
+
+  </nav>
+
+  <!-----------header----------->
+
+<!-- ✨ Stylish Hero Section with Glowing Profile Image -->
+<div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+  
+  <!-- Glowing Animated Profile Image with Shine -->
+  <div class="relative">
+    <!-- Glowing Aura Behind Image -->
+    <div class="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 blur-xl opacity-70 animate-pulse"></div>
+    
+    <!-- Optional Shine Effect Border -->
+    <div class="shiny-border inline-block">
+      <img 
+        src="./images/profile-image.png" 
+        alt="Ajay Kumar Profile"
+        class="w-32 rounded-full border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 relative z-10"
+      />
+    </div>
+  </div>
+
+  <!-- Heading -->
+  <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+    Hi! I'm Ajay Kumar 
+    <img src="./images/hand-icon.png" alt="wave" class="w-6">
+  </h3>
+
+  <!-- Animated Typewriter Text -->
+  <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo h-20 mb-6">
+    <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-500"></span>
+    <span class="blinking-cursor text-violet-500">|</span>
+  </h1>
+
+  <!-- Description -->
+  <p class="max-w-2xl mx-auto mt-4">
+   B.Tech (CSE - Data Science) student skilled in MERN stack and AI technologies. Passionate about coding, technology, and building modern web apps with real-time features and intelligent solutions.
+  </p>
+
+  <!-- Buttons -->
+  <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+    <a href="#contact" class="px-10 py-3 border rounded-full 
+      bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">
+      Contact me
+      <img src="./images/right-arrow-white.png" alt="" class="w-4">
+    </a>
+
+    <a href="./images/logo.png" download class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black">
+      My Resume
+      <img src="./images/download-icon.png" alt="" class="w-4">
+    </a>
+  </div>
+</div>
+
+<!-- 🪄 CSS Animation for Shiny Border -->
+<style>
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shiny-border {
+  background: linear-gradient(120deg, #fff, #c084fc, #f472b6, #facc15, #fff);
+  background-size: 400% auto;
+  border-radius: 9999px;
+  padding: 4px;
+  animation: shine 4s linear infinite;
+}
+</style>
+
+
+<!-- Typewriter Script -->
+<script>
+  const phrases = [
+    "Full Stack Developer",
+    "AI Explorer",
+    "Data Analyst",
+    "Aspiring Software Engineer"
+  ];
+  const el = document.getElementById("typewriter");
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let currentPhrase = [];
+  let isDeleting = false;
+  let isEnd = false;
+
+  function loop() {
+    isEnd = false;
+    el.innerHTML = currentPhrase.join("");
+
+    if (phraseIndex >= phrases.length) {
+      phraseIndex = 0;
+    }
+
+    if (!isDeleting && letterIndex <= phrases[phraseIndex].length) {
+      currentPhrase.push(phrases[phraseIndex][letterIndex]);
+      letterIndex++;
+      el.innerHTML = currentPhrase.join("");
+    }
+
+    if (isDeleting && letterIndex <= phrases[phraseIndex].length) {
+      currentPhrase.pop();
+      letterIndex--;
+      el.innerHTML = currentPhrase.join("");
+    }
+
+    if (letterIndex === phrases[phraseIndex].length) {
+      isEnd = true;
+      isDeleting = true;
+    }
+
+    if (isDeleting && letterIndex === 0) {
+      currentPhrase = [];
+      isDeleting = false;
+      phraseIndex++;
+    }
+
+    const spedUp = Math.random() * (50 - 30) + 30;
+    const normalSpeed = Math.random() * (80 - 60) + 60;
+    const time = isEnd ? 1000 : isDeleting ? spedUp : normalSpeed;
+
+    setTimeout(loop, time);
+  }
+
+  loop();
+</script>
+
+<style>
+  .blinking-cursor {
+    animation: blink 0.7s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+
+  <!-----------about me------------>
+
+<div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+  <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 drop-shadow-md">About me</h4>
+  <h2 class="text-center text-5xl font-Ovo font-semibold">Introduction</h2>
+  <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+    <div class="max-w-max mx-auto relative">
+      <img src="./images/user-image.png" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+      <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+        <img src="./images/circular-text.png" alt="" class="w-full animate-spin-slow">
+        <img src="./images/dev-icon.png" alt="" class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      </div>
+    </div>
+    <div class="flex-1">
+      <p class="mb-10 max-w-2xl font-Ovo">
+        I’m a B.Tech Computer Science (Data Science) student with a strong passion for Full Stack Development, AI and coding. I’ve worked on impactful real-time projects using MERN, Next.js, and AI APIs, and I enjoy turning complex ideas into practical web solutions.
+      </p>
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+          <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+          <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+          <p class="text-gray-600 text-sm dark:text-white/80">
+  C, Java, Python, JavaScript, SQL
+</p>
+        </li>
+
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+          <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+          <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+          <p class="text-gray-600 text-sm dark:text-white">
+            B.Tech in Computer Science (Data Science), CMR Institute of Technology, Hyderabad
+          </p>
+        </li>
+
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+          <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+          <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+          <p class="text-gray-600 text-sm dark:text-white">
+  Delivered 10+ innovative full stack and AI-integrated projects focused on real-time systems, automation, and scalable web platforms.
+</p>
+        </li>
+
+      </ul>
+      <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">
+        Tools I Use
+      </h4>
+      <ul class="flex items-center gap-3 sm:gap-5">
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+        </li>
+
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+        </li>
+
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
+        </li>
+
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/supabase.png" alt="" class="w-5 sm:w-7">
+        </li>
+
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/prisma.png" alt="" class="w-5 sm:w-7">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!------experience---------->
+
+<!-- Experience Section -->
+<div id="experience" class="w-full px-[12%] py-14 scroll-mt-20">
+  <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 drop-shadow-md">
+    Experience
+  </h4>
+  <h2 class="text-center text-5xl font-Ovo font-semibold mb-12">
+    My Journey Through Tech & Training
+  </h2>
+
+  <div class="flex flex-col gap-10">
+    
+    <!-- Experience 1 -->
+<div class="flex group rounded-lg overflow-hidden shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_#5b21b6] dark:hover:shadow-[0_0_15px_#7c3aed]">
+  <!-- Left Image -->
+  <div class="w-fit h-fit">
+    <img src="./images/gdsc.png" alt="GDSC" class="w-48 h-40 object-contain">
+  </div>
+
+  <!-- Light Vertical Margin -->
+  <div class="w-[0.5rem] bg-gray-700 dark:bg-gray-400"></div>
+
+  <!-- Right Content -->
+  <div class="w-[60%] bg-white dark:bg-black text-black dark:text-white p-6 pl-8">
+    <h3 class="text-2xl font-semibold mb-2 text-sky-600 dark:text-violet-400">Google Developer Student Clubs (GDSC)</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">Core Member | Sept 2023 - July 2024</p>
+    <ul class="list-disc pl-6 mt-3 text-gray-700 dark:text-gray-400">
+      <li>Developed knowledge in Machine Learning, Cloud Computing, and Generative AI technologies.</li>
+      <li>Expanded understanding of cloud strategies to enhance business growth.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Experience 2 -->
+<div class="flex group rounded-lg overflow-hidden shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_#5b21b6] dark:hover:shadow-[0_0_15px_#7c3aed] mt-6">
+  <!-- Left Image -->
+  <div class="w-fit h-fit">
+    <img src="./images/TTS.png" alt="Python Internship" class="w-48 h-40 object-contain">
+  </div>
+
+  <!-- Light Vertical Margin -->
+  <div class="w-[0.5rem] bg-gray-700 dark:bg-gray-400"></div>
+
+  <!-- Right Content -->
+  <div class="w-[60%] bg-white dark:bg-black text-black dark:text-white p-6 pl-8">
+    <h3 class="text-2xl font-semibold mb-2 text-sky-600 dark:text-violet-400">Python Internship – Triad Techno Services</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">Intern | June 17 – July 6, 2024</p>
+    <ul class="list-disc pl-6 mt-3 text-gray-700 dark:text-gray-400">
+      <li>Completed training on Python programming fundamentals and advanced topics.</li>
+      <li>Worked on mini-projects and hands-on tasks provided during internship.</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Skills Section -->
+<div id="skills" class="w-full px-[12%] py-10 scroll-mt-20">
+  <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 drop-shadow-md">
+    Skills
+  </h4>
+
+  <h2 class="text-center text-5xl font-Ovo font-semibold">
+    My Technical Toolkit 
+  </h2>
+  <br>
+
+  <div class="grid md:grid-cols-3 gap-x-12 gap-y-12">
+    
+    <!-- Front-End -->
+    <div class="bg-white dark:bg-darkHover rounded-xl shadow-md p-6 border border-transparent transition-all duration-300 ease-in-out hover:border-blue-500 hover:shadow-lg hover:scale-[1.04]">
+      <h3 class="text-xl font-bold text-blue-600 mb-4">Front-End</h3>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" class="w-6 h-6"> HTML – <span class="text-sm text-gray-600 dark:text-gray-300">85%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" class="w-6 h-6"> CSS – <span class="text-sm text-gray-600 dark:text-gray-300">80%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" class="w-6 h-6"> JavaScript – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" class="w-6 h-6"> Bootstrap – <span class="text-sm text-gray-600 dark:text-gray-300">70%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" class="w-6 h-6"> Git/GitHub – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" class="w-6 h-6"> React JS – <span class="text-sm text-gray-600 dark:text-gray-300">80%</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Back-End -->
+    <div class="bg-white dark:bg-darkHover rounded-xl shadow-md p-6 border border-transparent transition-all duration-300 ease-in-out hover:border-purple-500 hover:shadow-lg hover:scale-[1.04]">
+      <h3 class="text-xl font-bold text-purple-600 mb-4">Back-End</h3>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" class="w-6 h-6"> Node JS – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img class="w-6 h-6"> Django – <span class="text-sm text-gray-600 dark:text-gray-300">70%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" class="w-6 h-6 bg-white rounded p-0.5"> Express JS – <span class="text-sm text-gray-600 dark:text-gray-300">65%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" class="w-6 h-6"> MySQL – <span class="text-sm text-gray-600 dark:text-gray-300">60%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" class="w-6 h-6"> Mongo DB – <span class="text-sm text-gray-600 dark:text-gray-300">70%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://img.icons8.com/ios-filled/50/000000/api.png" class="w-6 h-6"> RESTful API – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Programming & Others -->
+    <div class="bg-white dark:bg-darkHover rounded-xl shadow-md p-6 border border-transparent transition-all duration-300 ease-in-out hover:border-pink-500 hover:shadow-lg hover:scale-[1.04]">
+      <h3 class="text-xl font-bold text-pink-600 mb-4">Programming & Others</h3>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" class="w-6 h-6"> Java – <span class="text-sm text-gray-600 dark:text-gray-300">90%</span>
+          
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" class="w-6 h-6"> C/C++ – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-artificial-intelligence-robotics-flaticons-lineal-color-flat-icons.png" class="w-6 h-6"> AI & ML – <span class="text-sm text-gray-600 dark:text-gray-300">65%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" class="w-6 h-6"> JavaScript – <span class="text-sm text-gray-600 dark:text-gray-300">75%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" class="w-6 h-6"> Python – <span class="text-sm text-gray-600 dark:text-gray-300">70%</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="https://img.icons8.com/color/48/000000/combo-chart--v1.png" class="w-6 h-6"> Data Analytics – <span class="text-sm text-gray-600 dark:text-gray-300">60%</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!--------projects------------->
+
+<div id="Projects" class="w-full px-[12%] py-10 scroll-mt-20">
+  <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 drop-shadow-md">
+    Projects
+  </h4>
+
+  <h2 class="text-center text-5xl font-Ovo font-semibold mb-4">Turning Ideas into Impactful Digital Solutions</h2>
+  <p class="text-center max-w-2xl mx-auto mb-12 font-Ovo text-gray-700 dark:text-gray-300">
+    Explore a collection of innovative projects developed using modern technologies like the MERN stack, AI integrations, and real-time databases — crafted to solve real-world challenges with precision and creativity.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 dark:text-black">
+    
+    <!-- NeuroVerse AI -->
+    <a href="https://neuroverse-ai-blond.vercel.app/" target="_blank">
+      <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border border-gray-300 dark:border-gray-600 shadow-lg hover:shadow-2xl hover:shadow-blue-400/30 hover:-translate-y-2 transition-all duration-500">
+        <div class="bg-black/10 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+          <div>
+            <h2 class="font-semibold">NeuroVerse AI</h2>
+            <p class="text-sm text-gray-700">Intelligence SaaS Platform</p>
+          </div>
+          <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:to-violet-500">
+            <img src="./images/send-icon.png" alt="icon" class="w-5">
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- FinQuarius AI -->
+    <a href="https://finquarius-ai.vercel.app/" target="_blank">
+      <div class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border border-gray-300 dark:border-gray-600 shadow-lg hover:shadow-2xl hover:shadow-blue-400/30 hover:-translate-y-2 transition-all duration-500">
+        <div class="bg-black/10 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+          <div>
+            <h2 class="font-semibold">FinQuarius AI</h2>
+            <p class="text-sm text-gray-700">Personal Finance Platform</p>
+          </div>
+          <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:to-violet-500">
+            <img src="./images/send-icon.png" alt="icon" class="w-5">
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Instant Chat -->
+    <a href="https://instant-chat-frontend-side.vercel.app/" target="_blank">
+      <div class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border border-gray-300 dark:border-gray-600 shadow-lg hover:shadow-2xl hover:shadow-blue-400/30 hover:-translate-y-2 transition-all duration-500">
+        <div class="bg-black/10 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+          <div>
+            <h2 class="font-semibold">Instant Chat</h2>
+            <p class="text-sm text-gray-700">Real-time Messaging Web App</p>
+          </div>
+          <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:to-violet-500">
+            <img src="./images/send-icon.png" alt="icon" class="w-5">
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- JobSearch Pro -->
+    <a href="https://jobsearch-pro.vercel.app/" target="_blank">
+      <div class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border border-gray-300 dark:border-gray-600 shadow-lg hover:shadow-2xl hover:shadow-blue-400/30 hover:-translate-y-2 transition-all duration-500">
+        <div class="bg-black/10 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+          <div>
+            <h2 class="font-semibold">JobSearch Pro</h2>
+            <p class="text-sm text-gray-700">Full Stack Job Portal Application</p>
+          </div>
+          <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:to-violet-500">
+            <img src="./images/send-icon.png" alt="icon" class="w-5">
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <a href="https://github.com/DHANDEAJAYKUMAR?tab=repositories" target="_blank" class="w-max flex items-center justify-center gap-2 
+    text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
+    mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">
+    View Full Projects
+    <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+    <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
+  </a>
+</div>
+
+
+
+
+  <!-- Certificates Section -->
+
+  
+<div id="certificates" class="w-full px-[-22%] py-16 bg-white dark:bg-[#0f0f0f]">
+  <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 drop-shadow-md">
+    Certificates
+  </h4>
+  <h2 class="text-center text-5xl font-Ovo font-semibold">My Achievements</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14">
+
+    <!-- Certificate Card 1 -->
+    <a href="https://drive.google.com/file/d/1sMSe6lxD9hJo5wKuISStVOQhMR4qnGw9/view?usp=sharing" target="_blank"
+  class="relative group block rounded-xl overflow-hidden border border-gray-300 dark:border-gray-600 shadow-lg transition-transform hover:-translate-y-2 duration-300 h-[380px]">
+
+  <img src="./images/hack.png" alt="HackVerse" class="w-full h-[80%] object-cover bg-gray-100 dark:bg-[#1c1c1c]">
+
+  <div class="bg-black/10 dark:bg-white py-2 text-center h-[20%]">
+    <span class="text-black dark:text-white font-extrabold text-lg tracking-wide">
+      HackVerse – National Hackathon
+    </span>
+  </div>
+
+  <!--  Gradient Hover Overlay with instant color effect -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-4 text-sm text-center backdrop-blur-sm 
+              bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 group-hover:from-yellow-500 group-hover:via-red-500 group-hover:to-fuchsia-600 bg-opacity-90">
+    <p class="text-lg font-semibold tracking-wide leading-relaxed text-white drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]">
+      Participated in <span class="font-bold text-yellow-300">HackVerse</span> – a national-level hackathon! Collaborated, built, and deployed solutions under <span class="underline decoration-pink-400">48 hours flat</span>.
+    </p>
+  </div>
+</a>
+
+
+
+    <!-- Certificate Card 2 -->
+<a href="https://drive.google.com/file/d/1svXRaihJRk56k6mJtJGGXDyYnnJkkrEJ/view?usp=sharing" target="_blank"
+  class="relative group block rounded-xl overflow-hidden border border-gray-300 dark:border-gray-600 shadow-lg transition-transform hover:-translate-y-2 duration-300 h-[380px]">
+
+  <img src="./images/codechef.png" alt="CodeChef - Learn by Python" class="w-full h-[80%] object-cover bg-gray-100 dark:bg-[#1c1c1c]">
+
+  <div class="bg-black/10 dark:bg-white py-2 text-center h-[20%]">
+    <span class="text-black dark:text-white font-extrabold text-lg tracking-wide">
+      CodeChef – Python Course
+    </span>
+  </div>
+
+  <!-- Hover Overlay -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-4 text-sm text-center backdrop-blur-sm 
+              bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 group-hover:from-yellow-500 group-hover:via-red-500 group-hover:to-fuchsia-600 bg-opacity-90">
+    <p class="text-lg font-semibold tracking-wide leading-relaxed text-white drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]">
+      Completed <span class="font-bold text-yellow-300">CodeChef's Learn Python</span> course — mastered programming with real hands-on projects and practical skill-building.
+    </p>
+  </div>
+</a>
+
+<!-- Certificate Card 3 -->
+<a href="https://drive.google.com/file/d/1tqW1yGlmJ-_b6-cUMLtVoWqLGNhoKSv8/view?usp=sharing" target="_blank"
+  class="relative group block rounded-xl overflow-hidden border border-gray-300 dark:border-gray-600 shadow-lg transition-transform hover:-translate-y-2 duration-300 h-[380px]">
+
+  <img src="./images/aiml.png" alt="Google AI/ML" class="w-full h-[80%] object-cover bg-gray-100 dark:bg-[#1c1c1c]">
+
+  <div class="bg-black/10 dark:bg-white py-2 text-center h-[20%]">
+    <span class="text-black dark:text-white font-extrabold text-lg tracking-wide">
+      Google AI/ML – Eduskills Internship
+    </span>
+  </div>
+
+  <!-- Hover Overlay -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-4 text-sm text-center backdrop-blur-sm 
+              bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 group-hover:from-yellow-500 group-hover:via-red-500 group-hover:to-fuchsia-600 bg-opacity-90">
+    <p class="text-lg font-semibold tracking-wide leading-relaxed text-white drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]">
+        Completed the <span class="font-bold text-yellow-300">Google AI/ML Internship</span> via Eduskills! Hands-on ML training with real data...
+    </p>
+  </div>
+</a>
+
+
+<div class="mt-60"></div>
+
+  <!------contact------>
+
+  <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')]
+  bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
+    <h4 class="text-center mb-4 text-xl font-bold tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 drop-shadow-md">Connect with me</h4>
+    <h2 class="text-center text-5xl font-Ovo font-semibold">Get in touch</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+       I'd happy  to hear from you! If you have any questions, comment or feedback, please use the form below.</p>
+
+    <form method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
+       <input type="hidden" name="access_key" value="a5cacea2-0bdf-45a5-a25f-b6d206d562c6">
+  <div class="grid grid-cols-auto gap-6 mt-10 mb-4">
+    <input type="text" placeholder="Enter your name" class="flex-1 p-3 
+    outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"required name="name">
+
+    <input type="email" placeholder="Enter your email" class="flex-1 p-3 
+    outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"required name="email">
+  </div>
+  
+  <textarea rows="6" placeholder="Enter your message" class="w-full p-4 
+  outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"required name="message"></textarea>
+
+  <button class="py-3 px-8 w-max flex items-center justify-between gap-2
+  bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">
+    Submit now
+    <img src="./images/right-arrow-white.png" alt="" class="w-4">
+  </button>
+</form>
+
+</div>
+
+<div class="mt-70"></div>
+
+<!----------footer---------->
+
+    
+
+      <!-- Logo Centered -->
+<div class="text-center">
+  <img src="./images/logo.png" alt="Logo" class="w-36 mx-auto mb-2 hidden">
+  <img src="./images/logo_dark.png" alt="Logo Dark" class="w-36 mx-auto mb-2 hidden">
+</div>
+
+
+
+<!-- Email Centered with Icon on Left -->
+<div class="flex justify-center">
+  <div class="flex items-center gap-2">
+    <img src="./images/mail_icon.png" alt="Email Icon" class="w-5 dark:hidden">
+    <img src="./images/mail_icon_dark.png" alt="Email Icon Dark" class="w-5 hidden dark:block">
+    <p class="text-sm">dandeajaykumar34@gmail.com</p>
+  </div>
+</div>
+
+
+
+    </div>
+    
+   <div class=" sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+  <p>© 2025 Ajay Kumar. All rights reserved.</p>
+ <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+  <li>
+    <a href="https://github.com/DHANDEAJAYKUMAR?tab=repositories" target="_blank" class="flex items-center gap-2">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-5 h-5 dark:invert">
+      GitHub
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/ajay-kumar-dhande-952735273" target="_blank" class="flex items-center gap-2">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5">
+      LinkedIn
+    </a>
+  </li>
+  <li>
+    <a href="https://x.com/aj_dhande" target="_blank" class="flex items-center gap-2">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" class="w-5 h-5 dark:invert">
+      Twitter
+    </a>
+  </li>
+</ul>
+
+</div>
+
+</div>
+
+  <script src="./script.js"></script>
+  <script src="./animated-background.js"></script>
+
+</body>
+</html>
